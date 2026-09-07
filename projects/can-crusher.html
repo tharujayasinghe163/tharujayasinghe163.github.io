@@ -1,23 +1,555 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manual Can Crusher | Tharushika Jayasinghe</title><link rel="stylesheet" href="../style.css"></head>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Can Crusher | Tharushika Jayasinghe</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .project-page { padding-bottom: 80px; }
+
+    .project-hero {
+      padding: 90px 0 55px;
+    }
+
+    .project-kicker {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .78rem;
+      font-weight: 700;
+      opacity: .65;
+    }
+
+    .project-title {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      margin: 14px 0 18px;
+    }
+
+    .project-subtitle {
+      max-width: 780px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      opacity: .75;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 25px 0 35px;
+    }
+
+    .project-meta span {
+      border: 1px solid rgba(0,0,0,.15);
+      padding: 8px 13px;
+      border-radius: 999px;
+      font-size: .85rem;
+    }
+
+    .hero-image {
+      margin-top: 35px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f3f3f3;
+    }
+
+    .hero-image img {
+      width: 100%;
+      display: block;
+      max-height: 700px;
+      object-fit: contain;
+    }
+
+    .project-section {
+      padding: 65px 0 10px;
+    }
+
+    .project-section h2 {
+      font-size: 2rem;
+      margin-bottom: 14px;
+    }
+
+    .section-intro {
+      max-width: 800px;
+      line-height: 1.8;
+      opacity: .75;
+      margin-bottom: 30px;
+    }
+
+    .objective-list {
+      max-width: 800px;
+      padding-left: 22px;
+      line-height: 1.9;
+      opacity: .78;
+    }
+
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .process-step {
+      padding: 22px 15px;
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 14px;
+      text-align: center;
+      background: #f7f7f7;
+      font-weight: 600;
+    }
+
+    .process-step span {
+      display: block;
+      font-size: .75rem;
+      opacity: .55;
+      margin-bottom: 8px;
+    }
+
+    .prototype-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .prototype-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #f5f5f5;
+      border: 1px solid rgba(0,0,0,.08);
+    }
+
+    .prototype-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4/3;
+      object-fit: contain;
+      background: #fff;
+    }
+
+    .card-text {
+      padding: 18px 20px 20px;
+    }
+
+    .card-text h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .card-text p {
+      margin: 0;
+      line-height: 1.6;
+      opacity: .72;
+      font-size: .94rem;
+    }
+
+    .testing-box {
+      padding: 30px;
+      border-radius: 18px;
+      background: #f4f4f4;
+      max-width: 850px;
+    }
+
+    .testing-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: 25px;
+      font-weight: 600;
+    }
+
+    .testing-flow span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.1);
+    }
+
+    .arrow {
+      opacity: .45;
+    }
+
+    .video-note {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border-left: 3px solid currentColor;
+      background: #f7f7f7;
+      line-height: 1.7;
+      opacity: .8;
+    }
+
+    .result-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .result-box img {
+      width: 100%;
+      border-radius: 16px;
+      background: #f5f5f5;
+    }
+
+    .result-box p {
+      line-height: 1.8;
+      opacity: .75;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skills-list span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #f1f1f1;
+      font-size: .9rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 35px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 800px) {
+      .process-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .prototype-grid,
+      .result-box {
+        grid-template-columns: 1fr;
+      }
+
+      .project-hero {
+        padding-top: 55px;
+      }
+    }
+  </style>
+
+</head>
+
 <body>
-<header class="site-header"><nav class="nav container"><a class="logo" href="../index.html">TJ<span>.</span></a>
-<div class="nav-links"><a href="../index.html#about">About</a><a href="../index.html#projects">Projects</a><a href="../index.html#skills">Skills</a><a href="../index.html#contact">Contact</a></div></nav></header>
-<main>
-<section class="section"><div class="container">
-<p class="eyebrow">PROJECT</p><h1 style="font-size:clamp(3rem,7vw,6rem)">Manual Can Crusher</h1>
-<p class="project-meta" style="margin-top:20px">SolidWorks · Mechanism Design · Prototyping</p>
-<div class="project-image" style="margin-top:50px;aspect-ratio:16/8">
-<img src="../assets/can-crusher.jpg" alt="Manual Can Crusher" onerror="this.style.display='none'; this.parentElement.classList.add('placeholder')">
-<div class="project-placeholder"><strong>Manual Can Crusher</strong><small>Replace this image with your best project render</small></div></div>
-<div class="two-column" style="margin-top:70px"><div><p class="eyebrow">OVERVIEW</p><h2 style="font-size:2.5rem">Project<br>development</h2></div>
-<div class="section-copy"><p>Designed a manual can-crushing mechanism and developed the mechanical components in SolidWorks. The project focused on a simple, practical mechanism suitable for fabrication and prototype testing.</p>
-<h3 style="margin-top:35px">My contribution</h3><p>Use this section to describe your specific work: CAD modelling, component design, calculations, material selection, assembly development, prototyping or testing.</p>
-<h3 style="margin-top:35px">CAD gallery</h3><p>Add 3–6 selected renders, drawings, exploded views and prototype photographs below.</p></div></div>
-<div class="project-grid" style="margin-top:60px">
-<div class="card-image"><span>CAD VIEW 01</span></div><div class="card-image"><span>CAD VIEW 02</span></div><div class="card-image"><span>TECHNICAL DRAWING</span></div>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="../index.html">TJ.</a>
+
+```
+<nav>
+  <a href="../index.html#about">About</a>
+  <a href="../index.html#projects">Projects</a>
+  <a href="../index.html#skills">Skills</a>
+  <a href="../index.html#contact">Contact</a>
+</nav>
+```
+
+  </div>
+</header>
+
+<main class="project-page">
+
+  <!-- HERO -->
+
+  <section class="project-hero">
+    <div class="container">
+
+```
+  <div class="project-kicker">Manufacturing & Prototype Project</div>
+
+  <h1 class="project-title">Manual Can Crusher</h1>
+
+  <p class="project-subtitle">
+    A group manufacturing project developed to apply practical manufacturing
+    process skills gained throughout the semester and create a space-saving
+    solution for the disposal of empty tins.
+  </p>
+
+  <div class="project-meta">
+    <span>Manufacturing</span>
+    <span>Prototype Development</span>
+    <span>Mechanical Design</span>
+    <span>Testing & Iteration</span>
+    <span>Team Project</span>
+  </div>
+
+  <div class="hero-image">
+    <img src="../assets/projects/can-crusher/prototype-01.jpeg"
+         alt="Manual can crusher prototype">
+  </div>
+
 </div>
-</div></section></main>
-<footer><div class="container footer-inner"><span>© 2026 Tharushika Jayasinghe</span><a href="../index.html">Back to portfolio ↑</a></div></footer>
-</body></html>
+```
+
+  </section>
+
+  <!-- OVERVIEW -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Project Overview</h2>
+
+  <p class="section-intro">
+    The Manual Can Crusher was developed as a group project to demonstrate
+    and apply the manufacturing process skills developed throughout the
+    semester's laboratory sessions. The project provided an opportunity to
+    transform practical manufacturing knowledge into a functional mechanical
+    prototype.
+  </p>
+
+  <p class="section-intro">
+    The crusher was designed with a practical purpose: to reduce the volume
+    occupied by discarded tins, making them more space-efficient for disposal
+    and storage.
+  </p>
+
+</div>
+```
+
+  </section>
+
+  <!-- OBJECTIVES -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Project Objectives</h2>
+
+  <ul class="objective-list">
+    <li>Apply manufacturing processes and techniques developed during laboratory sessions.</li>
+    <li>Develop a functional mechanical device as a team.</li>
+    <li>Apply practical fabrication knowledge to a real-world problem.</li>
+    <li>Reduce the volume occupied by empty tins during disposal.</li>
+    <li>Test the physical prototype and improve its operation through iteration.</li>
+  </ul>
+
+</div>
+```
+
+  </section>
+
+  <!-- MANUFACTURING -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Manufacturing Process</h2>
+
+  <p class="section-intro">
+    The prototype was manufactured by applying the manufacturing processes
+    and techniques developed through the laboratory sessions during the
+    semester. The project required the team to combine practical fabrication,
+    assembly and problem-solving skills to produce a working prototype.
+  </p>
+
+  <div class="process-flow">
+
+    <div class="process-step">
+      <span>01</span>
+      Material Preparation
+    </div>
+
+    <div class="process-step">
+      <span>02</span>
+      Component Fabrication
+    </div>
+
+    <div class="process-step">
+      <span>03</span>
+      Assembly
+    </div>
+
+    <div class="process-step">
+      <span>04</span>
+      Testing
+    </div>
+
+    <div class="process-step">
+      <span>05</span>
+      Improvement
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- PROTOTYPE -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Prototype Development</h2>
+
+  <p class="section-intro">
+    A physical prototype was developed to evaluate the proposed mechanism
+    under practical operating conditions. Building and testing the prototype
+    allowed the team to identify issues that could not be fully evaluated
+    during the initial development stage.
+  </p>
+
+  <div class="prototype-grid">
+
+    <article class="prototype-card">
+      <img src="../assets/projects/can-crusher/prototype-01.jpeg"
+           alt="Manual can crusher prototype view 1">
+
+      <div class="card-text">
+        <h3>Prototype View 01</h3>
+        <p>
+          Physical prototype developed by the team during the manufacturing
+          stage.
+        </p>
+      </div>
+    </article>
+
+
+    <article class="prototype-card">
+      <img src="../assets/projects/can-crusher/prototype-02.jpeg"
+           alt="Manual can crusher prototype view 2">
+
+      <div class="card-text">
+        <h3>Prototype View 02</h3>
+        <p>
+          Additional view of the completed manual can crusher prototype.
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- TESTING -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Testing & Iteration</h2>
+
+  <div class="testing-box">
+
+    <p class="section-intro">
+      Initial testing revealed an issue with the first prototype attempt.
+      The team evaluated the observed behaviour, identified the need for
+      improvement and modified the prototype before carrying out another
+      test.
+    </p>
+
+    <div class="testing-flow">
+
+      <span>Initial Attempt</span>
+      <div class="arrow">→</div>
+
+      <span>Problem Identified</span>
+      <div class="arrow">→</div>
+
+      <span>Improvement</span>
+      <div class="arrow">→</div>
+
+      <span>Successful Attempt</span>
+
+    </div>
+
+    <div class="video-note">
+      <strong>Prototype Testing:</strong>
+      The recorded testing sequence contains both the initial unsuccessful
+      attempt and the subsequent successful attempt after improvement.
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- FINAL RESULT -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Final Prototype</h2>
+
+  <div class="result-box">
+
+    <img src="../assets/projects/can-crusher/prototype-02.jpeg"
+         alt="Final manual can crusher prototype">
+
+    <div>
+
+      <h3>Successful Prototype Development</h3>
+
+      <p>
+        The final prototype demonstrated the intended can-crushing operation
+        and provided a practical demonstration of the manufacturing and
+        fabrication skills developed throughout the project.
+      </p>
+
+      <p>
+        More importantly, the project demonstrated the value of physical
+        testing and iteration in developing a functional mechanical product.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section class="project-section">
+    <div class="container">
+
+```
+  <h2>Skills Demonstrated</h2>
+
+  <div class="skills-list">
+    <span>Manufacturing Processes</span>
+    <span>Prototype Fabrication</span>
+    <span>Mechanical Assembly</span>
+    <span>Practical Engineering</span>
+    <span>Testing & Iteration</span>
+    <span>Problem Solving</span>
+    <span>Teamwork</span>
+    <span>Design Development</span>
+  </div>
+
+  <a class="back-link" href="../index.html#projects">
+    ← Back to Projects
+  </a>
+
+</div>
+```
+
+  </section>
+
+</main>
+
+</body>
+</html>
